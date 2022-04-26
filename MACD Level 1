@@ -1,0 +1,25 @@
+#Top Skill 1. Python Coding
+#Import Python Libraries
+import requests
+from IPython.display import Image, display
+
+#Top Skill 2. Get API Data
+getApiData = requests.get("https://coinballer.io/api/macd/APIKEY")
+ApiData = getApiData.json()
+
+#Top Skill 3. Variables
+ApiDataToday = ApiData[-1]
+Points = ApiDataToday['points']
+BTCPrice = ApiDataToday['price_close']
+
+#Top Skill 4. If Statements
+if Points > 50:
+    Scoreboard = 'https://i.imgur.com/HCAaaur.png'
+else: Scoreboard = 'https://i.imgur.com/K7eV4Ig.png'
+
+print('MACD')
+display(Image(Scoreboard))
+print('Points')
+print(Points)
+print('BTC Price')
+print(BTCPrice)
