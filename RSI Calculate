@@ -40,7 +40,7 @@ YourDataFrame = pandas.DataFrame({
     'high': high,
     'low': low,
     'volume': volume,
-    'amoun'": amount,            
+    'amount': amount,            
 })
 
 #Calculate Technical Indicators (RSI, Bollinger Bands, MACD)
