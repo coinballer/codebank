@@ -17,9 +17,9 @@ if Points > 50:
     Scoreboard = 'https://i.imgur.com/wjbQ2dq.png'
 else: Scoreboard = 'https://i.imgur.com/C88GgnO.png'
 
-print('MACD')
-display(Image(Scoreboard))
-print('Points')
-print(Points)
 print('BTC Price')
 print(BTCPrice)
+display(Image(Scoreboard))
+print('MACD Points')
+print(Points)
+
