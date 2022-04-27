@@ -9,7 +9,7 @@ ApiData = getApiData.json()
 
 #Top Skill 3. Variables
 ApiDataToday = ApiData[-1]
-BOLL = ApiDataToday['bollinger_middle']
+BollingerMiddle = ApiDataToday['bollinger_middle']
 BTCPrice = ApiDataToday['price_close']
 
 #Top Skill 4. If Statements
@@ -21,4 +21,3 @@ print('BTC Price')
 print(BTCPrice)
 display(Image(Scoreboard))
 print('BOLL')
-print(BOLL)
