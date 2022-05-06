@@ -4,7 +4,7 @@ import requests
 from IPython.display import Image, display
 
 #Top Skill 2. Get API Data
-getApiData = requests.get('https://coinballer.io/api/macd/APIKEY')
+getApiData = requests.get('https://coinballer.io/api/macd-pro/APIKEY')
 ApiData = getApiData.json()
 
 #Top Skill 3. Variables
