@@ -14,8 +14,8 @@ BTC = ApiDataToday['price_close']
 
 #Top Skill 4. If Statements
 if RSI > 50:
-    Scoreboard = 'https://i.imgur.com/8Li7d4A.png'
-else: Scoreboard = 'https://i.imgur.com/aCTsoA0.png'
+    Scoreboard = 'https://i.imgur.com/aCTsoA0.png'
+else: Scoreboard = 'https://i.imgur.com/8Li7d4A.png'
 
 print('Bitcoin Price')
 print(BTC)
