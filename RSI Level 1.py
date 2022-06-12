@@ -10,15 +10,16 @@ ApiData = getApiData.json()
 #Top Skill 3. Variables
 ApiDataToday = ApiData[-1]
 RSI = ApiDataToday['rsi']
-BTCPrice = ApiDataToday['price_close']
+BTC = ApiDataToday['price_close']
 
 #Top Skill 4. If Statements
 if RSI > 50:
-    Scoreboard = 'https://i.imgur.com/wjbQ2dq.png'
-else: Scoreboard = 'https://i.imgur.com/C88GgnO.png'
+    Scoreboard = 'https://i.imgur.com/8Li7d4A.png'
+else: Scoreboard = 'https://i.imgur.com/aCTsoA0.png'
 
-print('BTC Price')
-print(BTCPrice)
-display(Image(Scoreboard))
+print('Bitcoin Price')
+print(BTC)
 print('RSI')
 print(RSI)
+display(Image(Scoreboard))
+
