@@ -4,7 +4,7 @@ from IPython.display import Image, display
 import plotly.express
 
 #TOP SKILL #2: GET API DATA
-getApiData = requests.get("https://coinballer.io/api/technical-indicators-daily/62a6542691df4b00521b5dad")
+getApiData = requests.get("https://coinballer.io/api/technical-indicators-daily/APIKEY")
 ApiData = getApiData.json()
 
 #TOP SKILL #3: DECLARE AND SET VARIABLES
