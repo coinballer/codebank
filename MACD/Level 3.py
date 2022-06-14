@@ -33,10 +33,7 @@ chartPrice.update_traces(marker_color=MACDColor)
 chartPoints = plotly.express.area(x=ApiDataFrame.date, y=ApiDataFrame.daily_points)
 
 #TOP SKILL: CREATE A CHART USING PLOTLY
-chartDaily = plotly.express.line(x=ApiDataFrame.date, y=ApiDataFrame.daily_macd_line, labels={
-                     "x": "DATE",
-                     "y": "MACD LINE",
-                 })
+chartDaily = plotly.express.line(x=ApiDataFrame.date, y=ApiDataFrame.daily_macd_line)
 chartDaily.update_traces(line=dict(color="black", width=5))
 chartDaily.add_trace(go.Scatter(x=ApiDataFrame.date, y=ApiDataFrame.daily_signal_line, fill='tozeroy', line=dict(color="#eeaf12", width=5), name="signal"))
 chartDaily.add_trace(go.Bar(x=ApiDataFrame.date, y=ApiDataFrame.daily_histogram, marker_color="DeepSkyBlue", name="histogram"))
