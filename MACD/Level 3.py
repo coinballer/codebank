@@ -5,7 +5,7 @@ import plotly.express
 import pandas
 
 #TOP SKILL #2: IMPORTING API DATA
-getApiData = requests.get("https://coinballer.io/api/technical-indicators-daily/APIKEY")
+getApiData = requests.get("https://coinballer.io/api/macd-pro/APIKEY")
 ApiData = getApiData.json()
 
 #TOP SKILL #3: DECLARE AND SET VARIABLES
