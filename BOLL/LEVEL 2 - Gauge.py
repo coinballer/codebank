@@ -1,9 +1,9 @@
-#TOP SKILL #1: IMPORT PYTHON LIBRARIES (PYTHON CODING)
+#TOP SKILL 1: IMPORT PYTHON LIBRARIES (PYTHON CODING)
 import requests
 from IPython.display import Image, display
 
-#TOP SKILL #2: GET API DATA
-getApiData = requests.get("https://coinballer.io/api/macd-pro/APIKEY")
+#TOP SKILL 2: GET API DATA
+getApiData = requests.get("https://coinballer.io/api/pro-daily/APIKEY")
 ApiData = getApiData.json()
 
 #TOP SKILL 3: DECLARE AND SET VARIABLES
@@ -24,7 +24,7 @@ else:
     BollingerPoints = 0
   else: BollingerPoints = round(BollingerPriceSpread / BollingerSpread, 1) * 100
 
-#TOP SKILL #4: SIMPLE IF STATEMENT
+#TOP SKILL 4: SIMPLE IF STATEMENT
 if BitcoinPrice > BollingerMiddle:
     GaugeColor = 'green'
 else: GaugeColor = 'red'
