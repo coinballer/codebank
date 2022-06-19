@@ -1,4 +1,4 @@
-#Top Skill 1. Python Coding
+#TOP SKILL 1: IMPORT PYTHON LIBRARIES (PYTHON CODING)
 #Import Python Libraries
 !pip install pandas
 !pip install requests
@@ -7,11 +7,11 @@ import requests
 import pandas as pandas
 from stockstats import StockDataFrame
 
-#Top Skill 2. Get API Data
-getApiData = requests.get('https://coinballer.io/api/technical-indicators-daily/APIKEY')
+#TOP SKILL 2: GET API DATA
+getApiData = requests.get("https://coinballer.io/api/pro-daily/APIKEY")
 ApiData = getApiData.json()
 
-#Top Skill 3. Variables (Empty Boxes)
+#TOP SKILL 3: DECLARING VARIABLES (EMPTY BOX)
 open = []
 close = []
 high = []
@@ -19,8 +19,7 @@ low = []
 volume = []
 amount = []
 
-#Top Skill 5. Loops (Fill The Empty Boxes)
-#Learn more (https://www.learnpython.org/en/loops)
+#TOP SKILL 2: SETTING VARIABLES WITH A BASIC LOOP (FILL THE EMPTY BOX)
 for i in ApiData:
     iprice_open = i['price_open']
     open.append(iprice_open)
@@ -43,10 +42,11 @@ YourDataFrame = pandas.DataFrame({
     'amount': amount,            
 })
 
-#Calculate Technical Indicators (RSI, Bollinger Bands, MACD)
+#CALCULATE TECHNICAL INDICATORS (RSI, BOLLINGER BANDS, MACD)
 #Bollinger Bands - YourIndicator['boll'] = YourIndicator.get('boll')
 #MACD - YourIndicator['macd'] = YourIndicator.get('macd')
 YourIndicator = StockDataFrame.retype(YourDataFrame)
 YourIndicator['rsi_14'] = YourIndicator.get('rsi_14')
 
+#SHOW TECHNICAL INDICATOR DATA
 print(YourIndicator)
