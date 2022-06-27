@@ -37,7 +37,7 @@ Gauge.update_xaxes(visible=True,showticklabels=False)
 #TOP SKILL #3: DECLARE AND SET VARIABLES
 #Most Recent 150 Days (Slice Data)
 NumberofDays = len(ApiData)
-ApiData = ApiData[NumberofDays - 150:NumberofDays]
+ApiData = ApiData[NumberofDays - 90:NumberofDays]
 ApiDataFrame = pandas.DataFrame(ApiData)
 MinPrice = min(ApiDataFrame.price_close)
 MaxPrice = max(ApiDataFrame.price_close)
@@ -53,7 +53,7 @@ for i in ApiData:
      iMACDColor = 'green'
     else: 
      iMACDColor = 'red'
-     MACDColor.append(iMACDColor)
+    MACDColor.append(iMACDColor)
 
 #TOP SKILL: CREATE A CHART USING PLOTLY
 chartPrice = plotly.express.bar(x=ApiDataFrame.date, y=ApiDataFrame.price_close,labels={
