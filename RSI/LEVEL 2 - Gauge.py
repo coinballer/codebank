@@ -16,7 +16,7 @@ if RSI > 90:
 elif RSI < 10:
   RSIPoints = 0
 else: 
-  RSIPoints = round(((RSI - 10) / 80) * 100,1)
+  RSIPoints = round(((RSI - 10) / 80) * 100, 1)
 
 #TOP SKILL 4: SIMPLE IF STATEMENT
 if RSI > 50:
