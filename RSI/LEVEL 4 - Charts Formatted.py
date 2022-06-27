@@ -16,6 +16,7 @@ ApiDataFrame = pandas.DataFrame(ApiData)
 
 #TOP SKILL 3: DECLARING VARIABLES (EMPTY BOX)
 RSIColor = []
+RSIPoints = []
 
 #TOP SKILL 2: SETTING VARIABLES WITH A BASIC LOOP (FILL THE EMPTY BOX)
 for i in ApiData:
@@ -24,6 +25,13 @@ for i in ApiData:
     else: 
      iRSIColor = 'red'
      RSIColor.append(iRSIColor)
+     if i['rsi'] > 90:
+     iRSIPoints = 100
+    elif i['rsi'] < 10:
+     iRSIPoints = 0
+    else: 
+     iRSIPoints = round(((i['rsi'] - 10) / 80) * 100, 1)
+    RSIPoints.append(iRSIPoints)
 
 MinPrice = min(ApiDataFrame.price_close)
 MaxPrice = max(ApiDataFrame.price_close) 
@@ -39,23 +47,21 @@ chartPrice.update_layout(yaxis_range=[MinPrice,MaxPrice], plot_bgcolor='white')
 chartPrice.update_traces(marker_color=RSIColor)
 
 #TOP SKILL: CREATE A CHART USING PLOTLY
-chartPoints = plotly.express.area(x=ApiDataFrame.date, y=ApiDataFrame.rsi, labels={
+chartPoints = plotly.express.area(x=ApiDataFrame.date, y=RSIPoints, labels={
                      "x": "DATE",
                      "y": "RSI POINTS",
                  })
-chartPoints.update_layout(yaxis_range=[10,90], plot_bgcolor='black')
+chartPoints.update_layout(yaxis_range=[0,100], plot_bgcolor='black')
 chartPoints.update_layout(height=400, yaxis=dict(
         tickmode = 'array',
-        tickvals = [10, 30, 50, 70, 90],
-        ticktext = ['10', '30','50','70', '90']
+        tickvals = [0, 50, 100],
+        ticktext = ['0', '50','100']
     ))
 chartPoints.update_traces(line=dict(color="white", width=5))
-chartPoints.add_hline(y=70, line_color="green")
-chartPoints.add_hline(y=30, line_color="red")
 chartPoints.update_yaxes(showgrid=False, zeroline=False)
 chartPoints.update_xaxes(showgrid=False, zeroline=False)
 chartPoints.add_shape(type="rect",
-    x0=MinDate, y0=50, x1=MaxDate, y1=90,
+    x0=MinDate, y0=50, x1=MaxDate, y1=100,
     line=dict(
         color="green",
         width=2,
@@ -63,7 +69,7 @@ chartPoints.add_shape(type="rect",
     fillcolor="green", opacity=0.6,
 )
 chartPoints.add_shape(type="rect",
-    x0=MinDate, y0=50, x1=MaxDate, y1=10,
+    x0=MinDate, y0=50, x1=MaxDate, y1=00,
     line=dict(
         color="red",
         width=2,
