@@ -11,7 +11,7 @@ ApiData = getApiData.json()
 #TOP SKILL 3: DECLARE AND SET VARIABLES
 #Most Recent 150 Days (Slice Data)
 NumberofDays = len(ApiData)
-ApiData = ApiData[NumberofDays - 150:NumberofDays]
+ApiData = ApiData[NumberofDays - 90:NumberofDays]
 ApiDataFrame = pandas.DataFrame(ApiData)
 
 #TOP SKILL 3: DECLARING VARIABLES (EMPTY BOX)
@@ -24,7 +24,7 @@ for i in ApiData:
      iRSIColor = 'green'
     else: 
      iRSIColor = 'red'
-     RSIColor.append(iRSIColor)
+    RSIColor.append(iRSIColor)
     if i['rsi'] > 90:
      iRSIPoints = 100
     elif i['rsi'] < 10:
