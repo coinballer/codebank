@@ -16,6 +16,7 @@ ApiDataFrame = pandas.DataFrame(ApiData)
 
 #TOP SKILL 3: DECLARING VARIABLES (EMPTY BOX)
 RSIColor = []
+RSIPoints = []
 
 #TOP SKILL 2: SETTING VARIABLES WITH A BASIC LOOP (FILL THE EMPTY BOX)
 for i in ApiData:
@@ -24,13 +25,20 @@ for i in ApiData:
     else: 
      iRSIColor = 'red'
      RSIColor.append(iRSIColor)
+    if i['rsi'] > 90:
+     iRSIPoints = 100
+    elif i['rsi'] < 10:
+     iRSIPoints = 0
+    else: 
+     iRSIPoints = round(((i['rsi'] - 10) / 80) * 100, 1)
+    RSIPoints.append(iRSIPoints)
 
 #TOP SKILL: CREATE A CHART USING PLOTLY
 chartPrice = plotly.express.bar(x=ApiDataFrame.date, y=ApiDataFrame.price_close)
 chartPrice.update_traces(marker_color=RSIColor)
 
 #TOP SKILL: CREATE A CHART USING PLOTLY
-chartPoints = plotly.express.area(x=ApiDataFrame.date, y=ApiDataFrame.rsi)
+chartPoints = plotly.express.area(x=ApiDataFrame.date, y=RSIPoints)
 
 #TOP SKILL: CREATE A CHART USING PLOTLY
 chartDaily = plotly.express.line(x=ApiDataFrame.date, y=ApiDataFrame.rsi)
