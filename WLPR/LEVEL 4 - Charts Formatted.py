@@ -11,7 +11,7 @@ ApiData = getApiData.json()
 #TOP SKILL 3: DECLARE AND SET VARIABLES
 #Most Recent 150 Days (Slice Data)
 NumberofDays = len(ApiData)
-ApiData = ApiData[NumberofDays - 150:NumberofDays]
+ApiData = ApiData[NumberofDays - 90:NumberofDays]
 ApiDataFrame = pandas.DataFrame(ApiData)
 MinPrice = min(ApiDataFrame.price_close)
 MaxPrice = max(ApiDataFrame.price_close) 
@@ -28,7 +28,7 @@ for i in ApiData:
      iWLPRColor = 'green'
     else: 
      iWLPRColor = 'red'
-     WLPRColor.append(iWLPRColor)
+    WLPRColor.append(iWLPRColor)
     iWLPRPoints = 100 + i['wlpr']
     WLPRPoints.append(iWLPRPoints)
 
@@ -77,7 +77,7 @@ chartPoints.add_shape(type="rect",
 chartDaily = plotly.express.line(x=ApiDataFrame.date, y=ApiDataFrame.wlpr,labels={
                      "x": "DATE",
                      "y": "WLPR",
-                 }))
+                 })
 chartDaily.update_traces(line=dict(color="white", width=5))
 chartDaily.add_hline(y=-80, line_color="red")
 chartDaily.add_hline(y=-20, line_color="green")
