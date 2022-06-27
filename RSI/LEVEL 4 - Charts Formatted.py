@@ -25,13 +25,13 @@ for i in ApiData:
     else: 
      iRSIColor = 'red'
      RSIColor.append(iRSIColor)
-     if i['rsi'] > 90:
+    if i['rsi'] > 90:
      iRSIPoints = 100
     elif i['rsi'] < 10:
      iRSIPoints = 0
     else: 
      iRSIPoints = round(((i['rsi'] - 10) / 80) * 100, 1)
-    RSIPoints.append(iRSIPoints)
+     RSIPoints.append(iRSIPoints)
 
 MinPrice = min(ApiDataFrame.price_close)
 MaxPrice = max(ApiDataFrame.price_close) 
