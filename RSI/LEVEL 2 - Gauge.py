@@ -11,6 +11,12 @@ ApiData = getApiData.json()
 #Slice ApiData For Most Recent Date (Today)
 ApiData_Today = ApiData[-1]
 RSI = ApiData_Today['rsi']
+if RSI > 90:
+  RSIPoints = 100
+elif RSI < 10:
+  RSIPoints = 0
+else: 
+  RSIPoints = round(((RSI - 10) / 80) * 100,1)
 
 #TOP SKILL 4: SIMPLE IF STATEMENT
 if RSI > 50:
@@ -18,7 +24,7 @@ if RSI > 50:
 else: GaugeColor = 'red'
 
 #TOP SKILL: CREATE A CHART USING PLOTLY
-Gauge = plotly.express.bar(x=["RSI Points"], y=[RSI], text=[RSI], labels={
+Gauge = plotly.express.bar(x=["RSI Points"], y=[RSIPoints], text=[RSIPoints], labels={
                      "x": "",
                      "y": "RSI Points",
                  })
