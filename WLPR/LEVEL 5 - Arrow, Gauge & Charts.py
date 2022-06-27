@@ -74,12 +74,10 @@ chartPoints = plotly.express.area(x=ApiDataFrame.date, y=WLPRPoints,labels={
 chartPoints.update_layout(yaxis_range=[0,100], plot_bgcolor='black')
 chartPoints.update_layout(height=400, yaxis=dict(
         tickmode = 'array',
-        tickvals = [0, 20, 50, 80, 100],
-        ticktext = ['0', '20','50','80', '100']
+        tickvals = [0, 50, 100],
+        ticktext = ['0', '50', '100']
     ))
 chartPoints.update_traces(line=dict(color="white", width=5))
-chartPoints.add_hline(y=80, line_color="green")
-chartPoints.add_hline(y=20, line_color="red")
 chartPoints.update_yaxes(showgrid=False, zeroline=False)
 chartPoints.update_xaxes(showgrid=False, zeroline=False)
 chartPoints.add_shape(type="rect",
