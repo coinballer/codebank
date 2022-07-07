@@ -101,7 +101,7 @@ chartPoints.add_shape(type="rect",
 chartDaily = plotly.express.line(x=ApiDataFrame.date, y=ApiDataFrame.wlpr,labels={
                      "x": "DATE",
                      "y": "WLPR",
-                 }))
+                 })
 chartDaily.update_traces(line=dict(color="white", width=5))
 chartDaily.add_hline(y=-80, line_color="red")
 chartDaily.add_hline(y=-20, line_color="green")
