@@ -17,5 +17,5 @@ if MACDPoints > 50:
 else: Arrow = 'https://i.imgur.com/8Li7d4A.png'
 
 #SHOW SCOREBOARD
-print("MACD", MACDPoints)
+print("MACD Pro Points", MACDPoints)
 display(Image(Arrow, width = 150, height = 150))
