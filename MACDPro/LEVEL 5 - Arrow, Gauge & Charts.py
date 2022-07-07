@@ -108,7 +108,7 @@ chartDaily.update_yaxes(showgrid=False, zeroline=False)
 chartDaily.update_xaxes(showgrid=False, zeroline=False)
 
 #SHOW SCOREBOARD
-print("MACD", MACDPoints)
+print("MACD Pro Points", MACDPoints)
 display(Image(Arrow, width = 150, height = 150))
 Gauge.show()
 chartPrice.show()
