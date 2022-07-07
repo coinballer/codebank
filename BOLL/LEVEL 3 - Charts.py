@@ -36,9 +36,9 @@ for i in ApiData:
     if iBitcoinPrice > iBollingerUpper:
       iBollingerPoints = 100
     else: 
-    if iBitcoinPrice < iBollingerLower:
+     if iBitcoinPrice < iBollingerLower:
       iBollingerPoints = 0
-    else: iBollingerPoints = round(iBollingerPriceSpread / iBollingerSpread, 1) * 100
+     else: iBollingerPoints = round(iBollingerPriceSpread / iBollingerSpread, 1) * 100
     BOLLPoints.append(iBollingerPoints)
 
 #TOP SKILL: CREATE A CHART USING PLOTLY
