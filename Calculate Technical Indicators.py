@@ -8,10 +8,10 @@ import pandas as pandas
 from stockstats import StockDataFrame
 
 #TOP SKILL 2: GET API DATA
-getApiData = requests.get("https://coinballer.io/api/pro-daily/APIKEY")
+getApiData = requests.get("https://coinballer.io/api/pro-weekly/APIKEY")
 ApiData = getApiData.json()
 
-#TOP SKILL 3: DECLARING VARIABLES (EMPTY BOX)
+#TOP SKILL 3: DECLARING VARIABLES (EMPTY BOXES)
 open = []
 close = []
 high = []
@@ -19,7 +19,7 @@ low = []
 volume = []
 amount = []
 
-#TOP SKILL 2: SETTING VARIABLES WITH A BASIC LOOP (FILL THE EMPTY BOX)
+#TOP SKILL 2: SETTING VARIABLES WITH A BASIC LOOP (FILL THE EMPTY BOXES)
 for i in ApiData:
     iprice_open = i['price_open']
     open.append(iprice_open)
@@ -42,9 +42,14 @@ YourDataFrame = pandas.DataFrame({
     'amount': amount,            
 })
 
-#CALCULATE TECHNICAL INDICATORS (RSI, BOLLINGER BANDS, MACD)
-#Bollinger Bands - YourIndicator['boll'] = YourIndicator.get('boll')
-#MACD - YourIndicator['macd'] = YourIndicator.get('macd')
+#CALCULATE TECHNICAL INDICATORS: (RSI, BOLLINGER BANDS, MACD, WLPR)
+#RSI: YourIndicator['rsi_14'] = YourIndicator.get('rsi_14')
+#BOLL: YourIndicator['boll'] = YourIndicator.get('boll')
+#MACD: YourIndicator['macd'] = YourIndicator.get('macd')
+#WLPR: YourIndicator['wr'] = YourIndicator.get('wr')
+#MA 200: YourIndicator['close_200_sma'] = YourIndicator.get('close_200_sma')
+#MA 200: YourIndicator['close_100_sma'] = YourIndicator.get('close_100_sma')
+#MA 200: YourIndicator['close_50_sma'] = YourIndicator.get('close_50_sma')
 YourIndicator = StockDataFrame.retype(YourDataFrame)
 YourIndicator['rsi_14'] = YourIndicator.get('rsi_14')
 
