@@ -40,9 +40,9 @@ for i in ApiData:
     if iBitcoinPrice > iBollingerUpper:
       iBollingerPoints = 100
     else: 
-    if iBitcoinPrice < iBollingerLower:
+     if iBitcoinPrice < iBollingerLower:
       iBollingerPoints = 0
-    else: iBollingerPoints = round(iBollingerPriceSpread / iBollingerSpread, 1) * 100
+     else: iBollingerPoints = round(iBollingerPriceSpread / iBollingerSpread, 1) * 100
     BOLLPoints.append(iBollingerPoints)
 
 #TOP SKILL: CREATE A CHART USING PLOTLY
@@ -86,7 +86,7 @@ chartPoints.add_shape(type="rect",
 
 #TOP SKILL: CREATE A CHART USING PLOTLY
 chartDaily = plotly.express.line(x=ApiDataFrame.date, y=ApiDataFrame.price_close)
-chartDaily.update_traces(line=dict(color="black" width=5))
+chartDaily.update_traces(line=dict(color="black", width=5))
 chartDaily.add_trace(go.Scatter(x=ApiDataFrame.date, y=ApiDataFrame.bollinger_lower, line=dict(color="red", width=5), name="LOWER"))
 chartDaily.add_trace(go.Scatter(x=ApiDataFrame.date, y=ApiDataFrame.bollinger_middle, line=dict(color="grey", width=5, dash='dash'), name="MIDDLE"))
 chartDaily.add_trace(go.Scatter(x=ApiDataFrame.date, y=ApiDataFrame.bollinger_upper, line=dict(color="green", width=5), name="UPPER"))
