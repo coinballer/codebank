@@ -1,6 +1,6 @@
 #TOP SKILL #1: IMPORT PYTHON LIBRARIES (PYTHON CODING)
 import requests
-from IPython.display import Image, display
+import plotly.express
 
 #TOP SKILL #2: GET API DATA
 getApiData = requests.get("https://coinballer.io/api/macd-pro/APIKEY")
