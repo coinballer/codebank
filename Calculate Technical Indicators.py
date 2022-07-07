@@ -42,7 +42,7 @@ YourDataFrame = pandas.DataFrame({
     'amount': amount,            
 })
 
-#CALCULATE TECHNICAL INDICATORS: (RSI, BOLLINGER BANDS, MACD, WLPR)
+#CALCULATE TECHNICAL INDICATORS: (RSI, BOLLINGER BANDS, MACD, WLPR, MOVING AVERAGES)
 #RSI: YourIndicator['rsi_14'] = YourIndicator.get('rsi_14')
 #BOLL: YourIndicator['boll'] = YourIndicator.get('boll')
 #MACD: YourIndicator['macd'] = YourIndicator.get('macd')
